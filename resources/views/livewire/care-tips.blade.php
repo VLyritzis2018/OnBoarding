@@ -10,7 +10,7 @@
         session()->put('locale',session()->get('locale' ?? 'en'));
     }
     @endphp
-        <div class="container relative w-auto flex emergencyColor overflow-hidden xs:text-xs sm:text-sm md:text-base">
+        <div class="container relative w-full flex emergencyColor overflow-hidden xs:text-xs sm:text-sm md:text-base">
         <div class="flex flex-row sm:justify-center items-center mx-auto w-full h-full md:h-screen relative">
             {{-- Content Container --}}
         <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pl-6 sm:pl-0 sm:justify-start items-center">
