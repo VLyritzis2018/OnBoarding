@@ -5,11 +5,11 @@
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
             {{GoogleTranslate::trans('feel hopeless',session()->get('locale'))}}</p>
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-            {{GoogleTranslate::trans('fell worthless',session()->get('locale'))}}</p>
+            {{GoogleTranslate::trans('feel worthless',session()->get('locale'))}}</p>
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
             {{GoogleTranslate::trans('be agitated',session()->get('locale'))}}</p>
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-            {{GoogleTranslate::trans('socially isolated yourself',session()->get('locale'))}}</p>
+            {{GoogleTranslate::trans('socially isolate yourself',session()->get('locale'))}}</p>
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
             {{GoogleTranslate::trans('feel lonely',session()->get('locale'))}}</p>
     </div>

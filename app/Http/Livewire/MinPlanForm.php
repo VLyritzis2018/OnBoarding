@@ -61,17 +61,13 @@ class MinPlanForm extends Component
     {
         $this->currentStep = 2;
     }
-    public function infoPage()
-    {
-        $this->currentStep = 3;
-    }
     public function getCountry()
     {
 
         $this->validate([
             'country' => ['required'],
         ]);
-        $this->currentStep = 4;
+        $this->currentStep = 3;
     }
     public function stepOne()
     {
@@ -80,7 +76,7 @@ class MinPlanForm extends Component
                 'priority' => ['required'],
             ],
         );
-        $this->currentStep = 5;
+        $this->currentStep = 4;
     }
     public function stepTwo()
     {
@@ -92,7 +88,7 @@ class MinPlanForm extends Component
                 'age.required' => 'Please Select your age range...'
             ]
         );
-        $this->currentStep = 6;
+        $this->currentStep = 5;
     }
     public function stepThree()
     {
@@ -105,7 +101,7 @@ class MinPlanForm extends Component
 
             ],
         );
-        $this->currentStep = 7;
+        $this->currentStep = 6;
     }
     public function stepFour()
     {

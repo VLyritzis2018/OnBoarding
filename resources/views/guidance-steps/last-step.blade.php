@@ -4,7 +4,7 @@
             <p>{{GoogleTranslate::trans('Create a safty plan for yourself',session()->get('locale'))}} </p>
         </div>
         <div class="text-black">
-            <p>{{GoogleTranslate::trans('A safety plan help you identify what leads to a crisis, and how you can cope with it and stay safe',session()->get('locale'))}}</p>
+            <p>{{GoogleTranslate::trans('A safety plan helps you identify what leads to a crisis, and how you can cope with it and stay safe',session()->get('locale'))}}</p>
         </div>
         <div>
             <p>{{GoogleTranslate::trans("Having it written down will make you feel prepared if you get in another crisis",session()->get('locale'))}}</p>
