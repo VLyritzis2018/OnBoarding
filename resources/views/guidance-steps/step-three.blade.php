@@ -12,12 +12,12 @@
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
         {{GoogleTranslate::trans('The loss of a loved one',session()->get('locale'))}}</p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-        {{GoogleTranslate::trans('Having an abuse',session()->get('locale'))}}</p>
+        {{GoogleTranslate::trans('Experiencing abuse',session()->get('locale'))}}</p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
         {{GoogleTranslate::trans('Having a medical condition',session()->get('locale'))}}
     </p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-        {{GoogleTranslate::trans('Having mental problems.',session()->get('locale'))}}
+        {{GoogleTranslate::trans('Having mental problems',session()->get('locale'))}}
     </p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
         {{GoogleTranslate::trans('Being a victim of violece',session()->get('locale'))}}

@@ -41,14 +41,14 @@
                         <a id="firearms" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Firearms',session()->get('locale'))}}</a>
                 </div>
                 <div class="flex flex-col items-center justify-center xs:text-xs sm:text-sm md:text-base">
-                    <p class="py-1 text-center w-64">{{GoogleTranslate::trans('Move away from places that triggers somthing in you',session()->get('locale'))}}</p>
+                    <p class="py-1 text-center w-64">{{GoogleTranslate::trans('Move away from places that trigger somthing in you',session()->get('locale'))}}</p>
                 </div>
             </div>
             {{-- End of Step 1 --}}
             {{-- Step 3 --}}
             <div class="relative flex flex-col items-center {{$currentStep == 2 ? 'block' : 'hidden'}} text-start">
-                <p class="mb-10 w-60">{{GoogleTranslate::trans("Don’t be afraid to ask  these questions",session()->get('locale'))}}</p>
-                <div class="grid grid-rows-4 gap-y-3 w-60">
+                <p class="mb-10 xs:w-60 sm:w-80">{{GoogleTranslate::trans("Don’t be afraid to ask  these questions",session()->get('locale'))}}</p>
+                <div class="grid grid-rows-4 gap-y-4 xs:w-60 sm:w-80">
                     <p class="leading-5">{{GoogleTranslate::trans('Is this safe?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Can this situation be harmful?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Can you cope with this?',session()->get('locale'))}}</p>
@@ -62,8 +62,8 @@
                 <p class="mb-10 w-60">{{GoogleTranslate::trans('Please make sure that you:',session()->get('locale'))}}</p>
                 <div class="w-60">
                     <ul class="list-disc list-inside">
-                        <li class="py-1">{{GoogleTranslate::trans('Stay as calm as possible.',session()->get('locale'))}}</li>
-                        <li class="py-1">{{GoogleTranslate::trans('acknowlegde that your feelings are allowed',session()->get('locale'))}}</li>
+                        <li class="py-1">{{GoogleTranslate::trans('Stay as calm as possible',session()->get('locale'))}}</li>
+                        <li class="py-1">{{GoogleTranslate::trans('Acknowlegde that your feelings are allowed',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Encourage not to act upon the feelings',session()->get('locale'))}} </li>
                         <li class="py-1">{{GoogleTranslate::trans('Avoid confrontation',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Instill hope',session()->get('locale'))}}</li>
