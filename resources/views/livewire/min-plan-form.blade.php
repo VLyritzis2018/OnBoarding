@@ -31,7 +31,7 @@
                 <div class="flex px-2 gap-2 mb-2 content-center justify-center ">
                     <div class="flex flex-col py-2 content-center justify-center ">
                         <p class="my-2 text-center w-18">
-                            {{GoogleTranslate::trans('This form is used for research purposes, would be glad if you could cope with us.',session()->get('locale'))}}</p>
+                            {{GoogleTranslate::trans('This form is used for research purposes. We appreciate you taking the time to complete it.',session()->get('locale'))}}</p>
                     </div>
                 </div>
             </div>
@@ -72,14 +72,14 @@
                 <div class="w-auto {{$currentStep == 3 ? 'block' : 'hidden'}} flex justify-center content-center" id="step-4">
                     <div class="flex px-2 content-center justify-center w-80 h-40">
                         <div class="radio-button flex flex-col py-2 content-center justify-center ">
-                            <p class="my-2 text-center">What is your main priorities right now ?</p>
+                            <p class="my-2 text-center">What is your main priority right now ?</p>
                             <input type="radio" id="invited" value="invited" name="priority" wire:model="priority" class="hidden">
                             <label for="invited" id="invited-label" class="border-[1px] border-gray-300 py-2 px-2 my-0.5 rounded-full text-center cursor-pointer hover:bg-gray-200 select-none">
                                     Invited by Someone
                             </label>                            
                             <input type="radio" value="needhelp" id="looking" name="priority" wire:model="priority" class="hidden ">
                             <label for="looking" class="border-[1px] border-gray-300 py-2 px-2 my-0.5 rounded-full text-center cursor-pointer hover:bg-gray-200 select-none">
-                                    I Need Help Myself
+                                    I Need Help for Myself
                             </label> 
                             
                             <div class="text-center">

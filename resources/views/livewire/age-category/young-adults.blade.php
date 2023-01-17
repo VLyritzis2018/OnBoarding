@@ -17,7 +17,7 @@
         {{-- Content Container --}}
         <div class="relative flex items-center flex-col w-4/5 h-[90vh] mainColor my-7">
             <div class="relative flex justify-center items-center sm:h-28 h-16 mt-6 mb-2 sm:my-4">
-                <img src="{{URL::asset('/images/outline_health_and_safety.svg')}}" alt="Guidance Icon" class="sm:w-20 sm:h-20 h-16 w-16">
+                <span class="material-symbols-rounded mainColor xs:text-6xl sm:text-7xl">volunteer_activism</span>
             </div>
             {{-- Steps Container --}}
             <div class="relative flex justify-center items-center flex-col h-130 sm:h-150 w-60 sm:w-72">
@@ -81,9 +81,9 @@
             </div>
         </div>
         {{-- Stepper --}}
-        <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pr-6 sm:pr-0 sm:justify-end items-center mainColor">
+        <div class="static w-1/12 mt-4 h-auto sm:mt-0 flex justify-center pr-6 sm:pr-0 sm:justify-end items-center mainColor">
             <div>
-                    <button type="button"  class="{{$currentStep < 5 ? 'block':'hidden'}}" wire:click="nextStep"><i class="fas fa-chevron-right fa-2xl mainColor"></i></button>
+                    <button type="button"  class="{{$currentStep < 5 ? 'block':'hidden'}}" wire:click="nextStep"><i class="fas fa-chevron-right fa-2x sm:fa-4x"></i></button>
             </div>
         </div>
     </div>
