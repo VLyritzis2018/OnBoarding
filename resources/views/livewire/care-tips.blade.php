@@ -10,17 +10,17 @@
         session()->put('locale',session()->get('locale' ?? 'en'));
     }
     @endphp
-        <div class="container relative w-full flex emergencyColor overflow-hidden xs:text-xs sm:text-sm md:text-base">
-        <div class="flex flex-row sm:justify-center items-center mx-auto w-full h-full md:h-screen relative">
+        <div class="w-full h-auto text-sm md:text-base overflow-hidden emergencyColor">
+        <div class="flex flex-row justify-center items-center mx-auto w-full h-full md:h-screen relative xs:text-xs md:text-base">
             {{-- Content Container --}}
-        <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pl-6 sm:pl-0 sm:justify-start items-center">
+        <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pl-6 sm:pl-0  sm:justify-start items-center">
             <div>
                 <button type="button"  class="{{$currentStep > 1 ? 'block':'hidden'}}" wire:click="stepBack"><i class="fas fa-chevron-left fa-2x sm:fa-4x"></i></button>
             </div>
         </div>
         <div class="relative flex items-center flex-col w-4/5 h-[90vh] my-7">
             <div class="relative flex justify-center items-center h-28 sm:h-16 mt-6 mb-2 sm:my-4">
-                <span class="material-icons-outlined xs:text-6xl sm:text-7xl">health_and_safety</span>
+                <span class="material-icons-outlined xs:text-7xl sm:text-8xl">health_and_safety</span>
             </div>
             {{-- Steps Container --}}
             <div class="relative flex justify-center items-center flex-col h-[80vh] w-auto">
@@ -64,7 +64,7 @@
                     <ul class="list-disc list-inside">
                         <li class="py-1">{{GoogleTranslate::trans('Stay as calm as possible',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Acknowlegde that your feelings are allowed',session()->get('locale'))}}</li>
-                        <li class="py-1">{{GoogleTranslate::trans('Encourage not to act upon the feelings',session()->get('locale'))}} </li>
+                        <li class="py-1">{{GoogleTranslate::trans('Refrain from acting upon those feelings',session()->get('locale'))}} </li>
                         <li class="py-1">{{GoogleTranslate::trans('Avoid confrontation',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Instill hope',session()->get('locale'))}}</li>
                     </ul>
@@ -99,7 +99,7 @@
                         </div>
                         @else
                         <div class="{{$emergency_data == NUll ? 'hidden':'block'}} flex justify-center items-center flex-col text-center">
-                            <p class="my-1 ">{{GoogleTranslate::trans('Based on you the country choosen, you can call', session()->get('locale'))}}</p>
+                            <p class="my-1 ">{{GoogleTranslate::trans('Based on the country chosen you can call', session()->get('locale'))}}</p>
                                 @foreach ($emergency_data as $phonenumber)
                                     <p class="my-1  text-black bg-slate-200 py-1 px-2 rounded-lg">+{{$phonenumber->phone}}</p>
                                 @endforeach

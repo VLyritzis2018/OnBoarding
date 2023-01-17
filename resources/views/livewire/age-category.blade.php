@@ -12,7 +12,7 @@
 <div class="flex justify-center items-center mx-auto w-full h-full sm:h-screen relative">
     <div class="relative flex items-center flex-col w-4/5 h-[90vh] mainColor my-7">
             <div class="relative flex justify-center items-center sm:h-28 h-16 mt-6 mb-2 sm:my-4">
-                <img src="{{URL::asset('/images/outline_health_and_safety.svg')}}" alt="Guidance Icon" class="sm:w-20 sm:h-20 h-16 w-16">
+                <span class="material-symbols-rounded mainColor xs:text-7xl sm:text-8xl">volunteer_activism</span>
             </div>
             {{-- Steps Container --}}
         <div class="relative flex justify-center items-center">
