@@ -16,7 +16,7 @@ class ShowFormData extends Component
     public function render()
     {
         return view('livewire.show-form-data', [
-            'responces' => minPlanFormModel::paginate(9),
+            'responces' => minPlanFormModel::paginate(8),
         ]);
     }
 }
