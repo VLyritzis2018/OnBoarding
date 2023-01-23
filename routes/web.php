@@ -58,4 +58,6 @@ Route::middleware([
     Route::get('admin/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/admin/formdata', ShowFormData::class)->middleware(['auth', 'verified'])->name('formData');
+    Route::get('/admin/emergencycontacts', EmergencyContacts::class)->middleware(['auth', 'verified'])->name('contacts');
 });

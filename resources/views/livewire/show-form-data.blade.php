@@ -17,11 +17,11 @@
   {{-- Table Content --}}
   <div class="flex md:justify-center md:w-full min-h-fit">
   @if ($responces->isEmpty())
-         <div class="h-[80vh] flex justify-center items-center">
+         <div class="h-[70vh] flex justify-center items-center">
           <span class="text-3xl text-gray-300 font-bold">No Records <i class="fa fa-table"></i></span>
         </div>
   @else
-  <div class="w-fit md:w-[95%] h-auto bg-gray-100 rounded-md flex md:justify-center md:items-center mx-2 overflow-x-auto">
+  <div class="w-fit md:w-[95%] min-h-fit bg-gray-100 rounded-md flex md:justify-center md:items-center mx-2 overflow-x-auto">
     <table class="table-auto w-3/5 md:w-11/12 text-xs md:text-sm text-left text-gray-500 dark:text-gray-400 my-4 mx-2">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
