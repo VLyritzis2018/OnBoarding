@@ -55,8 +55,8 @@
         @endif
       </div>
       </div>
-      <div class="px-6 my-4">
-        {{$responces->links()}}
+      <div class="my-4">
+        {{ $responces->links()}}
       </div>
       
 </div>
