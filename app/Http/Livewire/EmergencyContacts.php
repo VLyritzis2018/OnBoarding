@@ -229,7 +229,7 @@ class EmergencyContacts extends Component
     public function render()
     {
         return view('livewire.emergency-contacts', [
-            'contacts' =>  Emergencyroom::paginate(9),
+            'contacts' =>  Emergencyroom::paginate(10),
         ]);
     }
 }
