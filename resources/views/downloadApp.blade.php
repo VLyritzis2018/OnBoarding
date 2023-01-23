@@ -1,6 +1,16 @@
 @section('title','Download App')
-    
-<x-guest-layouts>
+@php 
+if(session()->missing('locale')){
+            session()->put('locale','en');
+        }
+
+        if(session()->get('locale',''))
+        {
+            session()->put('locale',session()->get('locale' ?? 'en'));
+}
+$currentStep = session()->get('introPageCurrentStep') ?? 1;
+@endphp
+<x-guest-layout>
     <div class="relative h-screen bg-mainColor text-white flex justify-center items-center w-full z-10">
         <div class="absolute bottom-16 left-26 sm:top-40 sm:left-36 animate__animated animate__fadeIn animate__delay-1s">
             <img src="{{asset('/images/blob.svg')}}" alt="blob" class="w-44 sm:w-64 h-auto">
@@ -54,4 +64,4 @@
             </div>
         </div>
     </div>
-</x-guest-layouts>
+</x-guest-layout>
