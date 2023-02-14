@@ -11,7 +11,7 @@
     }
     @endphp
         <div class="w-full h-auto text-sm md:text-base overflow-hidden emergencyColor">
-        <div class="flex flex-row justify-center items-center mx-auto w-full h-full md:h-screen relative xs:text-xs md:text-base">
+        <div class="flex flex-row justify-center items-center mx-auto w-full h-full md:h-screen relative text-xs md:text-base">
             {{-- Content Container --}}
         <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pl-6 sm:pl-0  sm:justify-start items-center">
             <div>
@@ -20,14 +20,14 @@
         </div>
         <div class="relative flex items-center flex-col w-4/5 h-[90vh] my-7">
             <div class="relative flex justify-center items-center h-28 sm:h-16 mt-6 mb-2 sm:my-4">
-                <span class="material-icons-outlined xs:text-7xl sm:text-8xl">health_and_safety</span>
+                <span class="material-icons-outlined text-7xl sm:text-8xl">health_and_safety</span>
             </div>
             {{-- Steps Container --}}
             <div class="relative flex justify-center items-center flex-col h-[80vh] w-auto">
             {{-- Step 1 --}}
             <div class="static text-xs flex flex-col items-center {{$currentStep == 1 ? 'block' : 'hidden'}}">
                 
-                <div class="flex flex-col items-center justify-center sm:text-base xs:w-60 sm:w-64 h-44 text-justify">
+                <div class="flex flex-col items-center justify-center sm:text-base w-60 sm:w-64 h-44 text-justify">
                     <p class="py-2 leading-5 text-center">{{GoogleTranslate::trans('Think about your sorrundings',session()->get('locale'))}}</p>
                     <p class="py-4 leading-5">{{GoogleTranslate::trans('The goal is to reduce access to resources or items which can be used to cause you harm',session()->get('locale'))}}</p>
                     <p class="py-2 leading-5 text-center w-60" style="color: rgba(66, 192, 183, 1);">{{GoogleTranslate::trans("Press the items you've already secured:",session()->get('locale'))}}</p>
@@ -40,15 +40,15 @@
                         <a id="sharp" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Sharp objects',session()->get('locale'))}}</a>
                         <a id="firearms" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Firearms',session()->get('locale'))}}</a>
                 </div>
-                <div class="flex flex-col items-center justify-center xs:text-xs sm:text-sm md:text-base">
+                <div class="flex flex-col items-center justify-center text-xs sm:text-sm md:text-base">
                     <p class="py-1 text-center w-64">{{GoogleTranslate::trans('Move away from places that trigger somthing in you',session()->get('locale'))}}</p>
                 </div>
             </div>
             {{-- End of Step 1 --}}
             {{-- Step 3 --}}
             <div class="relative flex flex-col items-center {{$currentStep == 2 ? 'block' : 'hidden'}} text-start">
-                <p class="mb-10 xs:w-60 sm:w-80">{{GoogleTranslate::trans("Don’t be afraid to ask  these questions",session()->get('locale'))}}</p>
-                <div class="grid grid-rows-4 gap-y-4 xs:w-60 sm:w-80">
+                <p class="mb-10 w-60 sm:w-80">{{GoogleTranslate::trans("Don’t be afraid to ask  these questions",session()->get('locale'))}}</p>
+                <div class="grid grid-rows-4 gap-y-4 w-60 sm:w-80">
                     <p class="leading-5">{{GoogleTranslate::trans('Is this safe?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Can this situation be harmful?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Can you cope with this?',session()->get('locale'))}}</p>
@@ -72,42 +72,54 @@
             </div>
             {{-- End of Step 3 --}}
             {{-- Step 4 --}}
-            <div class="relative flex flex-col items-center justify-evenly {{$currentStep == 4 ? 'block' : 'hidden'}}">
-                <div class="grid grid-rows-2 gap-4 w-60 text-center">
+            <div x-data="{open:false}" class="relative flex flex-col items-center justify-evenly {{$currentStep == 4 ? 'block' : 'hidden'}}">
+                <div class="grid grid-rows-3 gap-2 w-60 sm:w-80 text-center">
                     <div>
                         <p>{{GoogleTranslate::trans('Please reach out for help if you can´t cope with your feelings alone.',session()->get('locale'))}} </p>
                     </div>
                     <div>
                         <p>{{GoogleTranslate::trans('Contact somebody in your network that you trust. Or use the professional assistance below.',session()->get('locale'))}}</p>
                     </div>
+                    <div>
+                        <p>{{GoogleTranslate::trans('You can find directions to the nearest emergency inside Minplan App.',session()->get('locale'))}}</p>
+                    </div>
                 </div>
-                <div class="sm:hidden {{$phoneNumber == NULL ? '' : ' grid-cols-2 gap-x-4'}} grid h-44 w-52 justify-items-center content-center">
+                <div x-on:click="open = ! open" class="hidden sm:block bg-emergency hover:cursor-pointer hover:bg-orange-400 text-slate-800 my-1 p-2 rounded-lg">
+                    <p x-text="open ? 'Hide Contacts' : 'Show Contacts'"></p>
+                </div>
+                <div class="sm:hidden {{$phoneNumber == NULL ? '' : ' grid-cols-3 gap-x-4'}} grid h-32 w-48 justify-items-center content-center">
                     @if ($phoneNumber !== NULL)                    
-                        <a href="tel:{{$phoneNumber->phone}}">
+                        <span x-on:click="open = ! open">
                             <img src="{{URL::asset('/images/Helpline.svg')}}" alt="Helpline">
-                        </a>
+                        </span>
+                        
                     @endif
                     <a href="tel:112">
                         <img src="{{URL::asset('/images/Emergency Calls.svg')}}" alt="Emergency Calls">
                     </a>
+                    <a href="/downloadApp" target="_blank"><img class="w-24 sm:w-full transition ease-in-out delay-150 hover:translate-y-1" src="{{URL::asset('/images/MinplanApp.svg')}}" alt="Minplan App"></a>
                 </div>
-                <div class="hidden sm:block w-72 mt-4">
+                
+                <div x-show="open" x-cloak x-transition class="sm:block w-72 mt-0.5 sm:mt-4">
                     <div class="flex justify-center items-center">
                         @if ($emergency_data->isEmpty())
                         <div class="relative flex items-center justify-center text-white text-center w-52 text-xs">
                             <p class="py-2 px-3 bg-red-500 rounded-md">{{GoogleTranslate::trans('No Emergency contacts available for the country provided.',session()->get('locale'))}}</p>
                         </div>
                         @else
-                        <div class="{{$emergency_data == NUll ? 'hidden':'block'}} flex justify-center items-center flex-col text-center">
+                        <div class="flex justify-center items-center flex-col text-center text-xs sm:text-sm">
                             <p class="my-1 ">{{GoogleTranslate::trans('Based on the country chosen you can call', session()->get('locale'))}}</p>
                                 @foreach ($emergency_data as $phonenumber)
                                     <p class="my-1  text-black bg-slate-200 py-1 px-2 rounded-lg">+{{$phonenumber->phone}}</p>
                                 @endforeach
                             <p class="my-1 ">{{GoogleTranslate::trans('or Visit their websites',session()->get('locale'))}}</p>
-                            <div class="flex flex-col text-start text-blue-500 text-sm">
+                            <div class="flex flex-col text-start text-blue-500">
                                 @foreach ($emergency_data as $data)
                                 <a class=" hover:underline hover:text-blue-600" href="{{$data->website}}" target="_blank">‣ {{$data->name}}</a>
                                 @endforeach
+                            </div>
+                            <div class="my-1 bg-emergency p-1 rounded-lg">
+                                <a href="/home/guidance" class="text-slate-800 ">Please tell us your age for better guidance</a>
                             </div>
                         </div>
                         @endif

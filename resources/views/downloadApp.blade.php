@@ -22,7 +22,7 @@ $currentStep = session()->get('introPageCurrentStep') ?? 1;
             <div class="flex justify-center items-center flex-col py-4">
                 <h1 class="text-2xl sm:text-6xl font-bold">{{GoogleTranslate::trans('Download',session()->get('locale'))}}</h1>
                 <h1 class="text-lg sm:text-2xl py-1">{{GoogleTranslate::trans('Our App',session()->get('locale'))}}</h1>
-                <h1 class="sm:py-4 text-sm">{{GoogleTranslate::trans('For All affected by mental crises',session()->get('locale'))}}</h1>
+                <h1 class="sm:py-4 text-sm">{{GoogleTranslate::trans('Manage Your Personal Crisis',session()->get('locale'))}}</h1>
                 
             </div>
             <div class="bg-white flex flex-col justify-center items-center">
@@ -58,7 +58,7 @@ $currentStep = session()->get('introPageCurrentStep') ?? 1;
                 </div>
                 <div class="bg-gray-200 rounded-lg py-1 px-3 my-2 sm:my-0 transition ease-in-out hover:translate-y-1">
                     <a href="https://minplan.org/" target="_blank">
-                        <h1 class="text-black text-xs hover:text-blue-600 hover:underline">More Information About The App</h1>
+                        <h1 class="text-black text-xs hover:text-blue-600 hover:underline">More Information About Minplan</h1>
                     </a>
                 </div>
             </div>

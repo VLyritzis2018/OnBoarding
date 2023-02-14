@@ -31,6 +31,9 @@
 .emergencyColor {
     color: #E9AF64;
 }
+.bg-emergency {
+    background-color: #E9AF64;
+}
 .radio-button input[type="radio"] {
     display: none;
 }      

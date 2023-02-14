@@ -66,3 +66,33 @@
         </div>
     </div>
 </div>
+@push('scripts')
+<script>
+    window.addEventListener('submit', function(event){
+      Swal.fire({
+      title:event.detail.title,
+      icon:event.detail.icon,
+      iconColor:event.detail.iconColor,
+      timer: 3000,
+      width:'24em',
+      toast:true,
+      position:'top-end',
+      timerProgressBar:true,
+      showConfirmButton:false,
+  });
+})
+    window.addEventListener('error', function(event){
+      Swal.fire({
+      title:event.detail.title,
+      icon:event.detail.icon,
+      iconColor:event.detail.iconColor,
+      timer: 3000,
+      width:'24em',
+      toast:true,
+      position:'top-end',
+      timerProgressBar:true,
+      showConfirmButton:false,
+  });
+})
+</script>
+@endpush

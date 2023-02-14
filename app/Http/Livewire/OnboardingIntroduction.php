@@ -5,11 +5,13 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\App;
 use Illuminate\Contracts\Session\Session;
+use phpDocumentor\Reflection\Types\This;
 
 class OnboardingIntroduction extends Component
 {
     public string $country = '';
     public $currentStep = 1;
+    public string $buttonType = '';
     protected $listeners = ['translate'];
 
     protected $rules = [
@@ -46,8 +48,14 @@ class OnboardingIntroduction extends Component
         $this->currentStep = 4;
         session()->put('introPageCurrentStep', $this->currentStep);
     }
-
-
+    public function shieldButton()
+    {
+        session(['buttonType' => $this->buttonType = 'Shield']);
+    }
+    public function handButton()
+    {
+        session(['buttonType' => $this->buttonType = 'Hand']);
+    }
     public function update($property)
     {
         $this->validateOnly($property);

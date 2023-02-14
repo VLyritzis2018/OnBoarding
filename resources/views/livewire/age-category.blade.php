@@ -21,30 +21,25 @@
                 <div class="flex px-2 gap-2 mb-2 content-center justify-center flex-col items-center">
                     <div class="radio-button flex flex-col py-2 justify-center items-center">
                         <p class="my-2 text-center w-44">{{GoogleTranslate::trans('Tell us your age to let us help you better',session()->get('locale'))}}</p>
-                        <a href="{{route('teens')}}">
-                            <div class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5">
-                                14 - 17
-                            </div>
+                        <a  wire:click="$set('age', '14-17')" >
+                            <input type="radio" name="teens" id="teens" wire:click="setAge">
+                            <label for="teens" class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5" >14 - 17</label>
                         </a>
-                        <a href="{{route('youngAdults')}}">
-                            <div class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5">
-                                18 - 25
-                            </div>
+                        <a  wire:click="$set('age', '18-25')">
+                            <input type="radio" name="teens" id="youngAdults" wire:click="setAge">
+                            <label for="youngAdults" class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5" >18 - 25</label>
                         </a>
-                        <a href="{{route('adults')}}">
-                            <div class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5">
-                                26 - 39
-                            </div>
+                        <a  wire:click="$set('age', '26-39')">
+                            <input type="radio" name="adults" id="adults" wire:click="setAge">
+                            <label for="adults" class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5" >26 - 39</label>
                         </a>
-                        <a href="{{route('adults')}}">
-                            <div class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5">
-                                40 - 64
-                            </div>
+                        <a  wire:click="$set('age', '40-64')">
+                            <input type="radio" name="oldAdults" id="oldAdults" wire:click="setAge">
+                            <label for="oldAdults" class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5" >40 - 64</label>
                         </a>
-                        <a href="{{route('adults')}}">
-                            <div class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5">
-                                65+
-                            </div>
+                        <a  wire:click="$set('age', '65+')">
+                            <input type="radio" name="ouders" id="ouders" wire:click="setAge">
+                            <label for="ouders" class="h-12 w-[219px] sm:h-12 border-[1px] border-gray-300  my-1 rounded-full cursor-pointer hover:bg-gray-200 text-center py-3.5" >65 +</label>
                         </a>
                     </div>
                 </div>
