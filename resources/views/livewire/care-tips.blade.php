@@ -118,11 +118,12 @@
                                 <a class=" hover:underline hover:text-blue-600" href="{{$data->website}}" target="_blank">‣ {{$data->name}}</a>
                                 @endforeach
                             </div>
-                            <div class="my-1 bg-emergency p-1 rounded-lg">
-                                <a href="/home/guidance" class="text-slate-800 ">Please tell us your age for better guidance</a>
-                            </div>
+                            
                         </div>
                         @endif
+                    </div>
+                    <div class="my-1 bg-emergency p-1 rounded-lg">
+                        <a href="/home/guidance" class="text-slate-800 ">Please tell us your age for better guidance</a>
                     </div>
                 </div>
             </div>
