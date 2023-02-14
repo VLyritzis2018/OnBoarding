@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('onboarding_data', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('age');
             $table->string('country');
             $table->string('buttonPressed');

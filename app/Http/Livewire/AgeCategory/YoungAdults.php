@@ -13,7 +13,12 @@ class YoungAdults extends Component
     protected $listeners = ['translate'];
 
     protected $rules = [
-        'email' => 'required|email',
+        'email' => 'required|email|unique:OnboardingData',
+    ];
+    protected $messages = [
+        'email.required' => 'The Email Address cannot be empty.',
+        'email.email' => 'The Email Address format is not valid.',
+        'email.unique' => 'This Email Address already been used here.'
     ];
     public function store()
     {
@@ -46,7 +51,7 @@ class YoungAdults extends Component
         } catch (\Throwable $th) {
             $this->dispatchBrowserEvent('error', [
                 'type' => 'error',
-                'title' => 'Opps. Something is Wrong.',
+                'title' => $th->getMessage(),
                 'icon' => 'error',
                 'iconColor' => 'red',
             ]);
