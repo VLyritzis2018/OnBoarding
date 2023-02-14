@@ -13,7 +13,7 @@ class YoungAdults extends Component
     protected $listeners = ['translate'];
 
     protected $rules = [
-        'email' => 'required|email|unique:OnboardingData',
+        'email' => 'required|email|unique:onboarding_data,email',
     ];
     protected $messages = [
         'email.required' => 'The Email Address cannot be empty.',
