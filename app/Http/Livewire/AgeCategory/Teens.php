@@ -2,14 +2,56 @@
 
 namespace App\Http\Livewire\AgeCategory;
 
+use App\Models\OnboardingData;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 
 class Teens extends Component
 {
     public $currentStep = 1;
+    public string $email = '';
     protected $listeners = ['translate'];
 
+    protected $rules = [
+        'email' => 'required|email',
+    ];
+    public function store()
+    {
+        try {
+            $this->validate();
+            $age = session()->get('Age');
+            $country = session()->get('country');
+            $buttoneType = session()->get('buttonType');
+            $email = $this->email;
+            $language = session()->get('locale');
+
+            OnboardingData::create([
+                'email' => $email,
+                'age' => $age,
+                'country' => $country,
+                'buttonPressed' => $buttoneType,
+                'language' => $language
+            ]);
+            $this->dispatchBrowserEvent('submit', [
+                'type' => 'success',
+                'title' => 'Email Saved.',
+                'icon' => 'success',
+                'iconColor' => 'green',
+            ]);
+            $age = '';
+            $country = '';
+            $buttoneType = '';
+            $this->email = '';
+            $language = '';
+        } catch (\Throwable $th) {
+            $this->dispatchBrowserEvent('error', [
+                'type' => 'error',
+                'title' => 'Opps. Something is Wrong.',
+                'icon' => 'error',
+                'iconColor' => 'red',
+            ]);
+        }
+    }
     public function stepBack()
     {
         if ($this->currentStep == 1) {

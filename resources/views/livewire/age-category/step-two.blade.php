@@ -16,7 +16,7 @@
         </ul>
     </div>
     <div class="sm:w-80 w-52 text-black">
-      <p>{{GoogleTranslate::trans('or try to visit one of these places',session()->get('locale'))}}</p>
+      <p>{{GoogleTranslate::trans('or try to visit their website',session()->get('locale'))}}</p>
       <ul class="list-inside">
         @foreach ($emergency_data as $data)
             <a href="{{$data->website}}" target="_blank"><li class="py-1 text-blue-500 sm:hover:underline">{{$data->name}}</li></a>

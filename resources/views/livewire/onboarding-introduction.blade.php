@@ -22,9 +22,9 @@
         </div>
     </div>
     {{-- Form --}}
-    <div class="relative flex  items-center flex-col w-4/5 xs:h-160 sm:h-screen md:h-screen my-7">
+    <div class="relative flex  items-center flex-col w-4/5 h-160 sm:h-screen md:h-screen my-7">
          {{-- Logo --}}
-         <div class="relative md:mt-12 mt-4 xs:w-28 md:w-36 h-50 {{$currentStep <=4  ? 'block':'hidden'}}">
+         <div class="relative md:mt-12 mt-4 w-28 md:w-36 h-50 {{$currentStep <=4  ? 'block':'hidden'}}">
             <img src="{{URL::asset('images/MP-LOGO-Final.png')}}" alt="Minplan Logo">
         </div>  
         {{-- Form --}}
@@ -101,13 +101,22 @@
             {{-- Step 4 --}}
             <div class="w-auto {{$currentStep == 4 ? 'block' : 'hidden'}} mt-6 mb-4" id="step-3">
                 <div class="flex px-2 gap-2 mb-2 items-center justify-center flex-col">
-                    <div class="w-auto mt-4 flex justify-center flex-col items-center">
-                        <a href="/help"><span class="material-icons-outlined text-orange-300 xs:text-6xl sm:text-7xl">health_and_safety</span></a>
-                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Press the Shield icon if you are in an acute mental crisis.',session()->get('locale'))}}</p>
+                    <div class="w-auto mt-2">
+                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Manage your personal crisis',session()->get('locale'))}}</p>
                     </div>
-                    <div class="w-auto mt-4 flex justify-center flex-col items-center">
-                        <a href="/home/guidance"><span class="material-symbols-rounded mainColor xs:text-6xl sm:text-7xl">volunteer_activism</span></a>
-                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Press the Guidance icon if you need support',session()->get('locale'))}}</p>
+                    <div class="w-auto mt-2 flex justify-center flex-col items-center">
+                        <button  wire:click="shieldButton">
+                            <a href="/help">
+                                <span class="material-icons-outlined text-orange-300 text-6xl sm:text-7xl">health_and_safety</span>
+                            </a>
+                        </button>
+                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Are you in acute crisis ?',session()->get('locale'))}}</p>
+                    </div>
+                    <div class="w-auto mt-2 flex justify-center flex-col items-center">
+                        <button wire:click="handButton">
+                            <a href="/home/guidance"><span class="material-symbols-rounded mainColor text-6xl sm:text-7xl">volunteer_activism</span></a>
+                        </button>
+                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Looking for support of guidelines?',session()->get('locale'))}}</p>
                     </div>
                 </div>
             </div>

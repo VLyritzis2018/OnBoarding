@@ -9,7 +9,7 @@ use Illuminate\Contracts\Session\Session;
 
 class CareTips extends Component
 {
-    public $currentStep = 1;
+    public $currentStep = 4;
     protected $listeners = ['translate'];
 
     public function render()
