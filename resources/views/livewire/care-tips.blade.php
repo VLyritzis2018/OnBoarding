@@ -50,7 +50,7 @@
                 <p class="mb-10 w-60 sm:w-80">{{GoogleTranslate::trans("Don´t be afraid to ask yourself the following questions:",session()->get('locale'))}}</p>
                 <div class="flex flex-col gap-y-4 w-60 sm:w-80">
                     <p class="leading-5">{{GoogleTranslate::trans('Can the situation still be harmful?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('How can you cope with these circumstances?',session()->get('locale'))}}</p>
+                    <p class="leading-5">{{GoogleTranslate::trans('Can you make it possible to cope with this?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Is there a risk of self-harm?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Who can help in this situation?',session()->get('locale'))}}</p>
                 </div>
@@ -65,7 +65,7 @@
                         <li class="py-1">{{GoogleTranslate::trans('Acknowlegde that your feelings are valid',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Refrain from acting upon those feelings',session()->get('locale'))}} </li>
                         <li class="py-1">{{GoogleTranslate::trans('Avoid confrontation',session()->get('locale'))}}</li>
-                        <li class="py-1">{{GoogleTranslate::trans('Instill hope',session()->get('locale'))}}</li>
+                        <li class="py-1">{{GoogleTranslate::trans('There will be a way, even if it seems impossible',session()->get('locale'))}}</li>
                     </ul>
                 </div>
             </div>
