@@ -14,11 +14,13 @@
 {{-- Main Container --}}
 <div class="w-full h-auto text-sm md:text-base overflow-hidden">
     {{-- Content Container --}}
-    <div class="flex flex-row justify-center items-center mx-auto w-full h-full md:h-screen relative xs:text-xs md:text-base">
+    <div class="flex flex-row justify-center items-center mx-auto w-full h-full md:h-screen relative text-xs sm:text-sm md:text-base">
     {{-- Back Icon--}}
     <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pl-6 sm:pl-0 sm:justify-start items-center mainColor">
         <div>
-            <button type="button" class="{{$currentStep > 1  ? 'block':'hidden'}}" wire:click="goBack"><i class="fas fa-chevron-left fa-2x sm:fa-4x"></i></button>
+            <button type="button" class="{{$currentStep > 1  ? 'block':'hidden'}}" wire:click="goBack">
+                <i class="fas fa-chevron-left fa-2x sm:fa-4x"></i>
+            </button>
         </div>
     </div>
     {{-- Form --}}
@@ -34,7 +36,7 @@
                 <div class="flex flex-col px-2 gap-2 mb-2 items-center justify-center">
                     <div class="flex py-2 items-center justify-center mb-6 ">
                         <p class="my-2 text-center w-36 sm:w-44 md:w-48 h-8">
-                            {{GoogleTranslate::trans('Welcome to Minplan. We are here to support you in times of crisis.',session()->get('locale'))}}
+                            {{GoogleTranslate::trans('Welcome to Minplan. We are here to support you in times of crisis',session()->get('locale'))}}
                         </p>
                     </div>
                     <div>
@@ -46,8 +48,8 @@
             <div class="w-auto {{$currentStep == 2 ? 'block' : 'hidden'}}" id="step-2">
                 <div class="flex flex-col px-2 gap-2 mb-2 items-center justify-center">
                     <div class="flex flex-col py-2 items-center justify-center mb-6">
-                        <p class="my-2 text-center w-36 sm:w-44 md:w-48 h-8">
-                            {{GoogleTranslate::trans('We will help you and your loved ones cope',session()->get('locale'))}}
+                        <p class="my-2 text-center w-52 sm:w-60 md:w-64 h-8">
+                            {{GoogleTranslate::trans('We can help you and your loved ones cope with a difficult situation',session()->get('locale'))}}
                         </p>  
                     </div>
                     <div class="my-4">
@@ -63,9 +65,9 @@
                 <div class="flex px-2 gap-2 mb-2 items-center justify-center">
                     <div class="flex flex-col py-2 items-center justify-center ">
                         <p class="my-4 sm:mb-4 md:mb-2 text-center w-52 md:w-72 h-8">
-                            {{GoogleTranslate::trans('To provide you with the most relevant resources and support, please choose your country',session()->get('locale'))}}</p>
+                            {{GoogleTranslate::trans('To provide you with the most relevant resources and support, select your country of residence',session()->get('locale'))}}</p>
                         <div class="flex flex-col justify-center items-center mt-4 sm:mt-8">
-                            <select wire:model="country" id="country" class="box-bg  py-2 px-6 mt-6 rounded-full cursor-pointer border-0 block focus:ring-slate-500 focus:border-black xs:text-xs sm:text-sm md:text-base" name="country">
+                            <select wire:model="country" id="country" class="box-bg  py-2 px-6 mt-6 rounded-full cursor-pointer border-0 block focus:ring-slate-500 focus:border-black text-xs sm:text-sm md:text-base" name="country">
                                 <option selected>{{GoogleTranslate::trans('Choose country',session()->get('locale'))}}</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Australia">Australia</option>
@@ -101,9 +103,6 @@
             {{-- Step 4 --}}
             <div class="w-auto {{$currentStep == 4 ? 'block' : 'hidden'}} mt-6 mb-4" id="step-3">
                 <div class="flex px-2 gap-2 mb-2 items-center justify-center flex-col">
-                    <div class="w-auto mt-2">
-                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Manage your personal crisis',session()->get('locale'))}}</p>
-                    </div>
                     <div class="w-auto mt-2 flex justify-center flex-col items-center">
                         <button  wire:click="shieldButton">
                             <a href="/help">
@@ -116,7 +115,7 @@
                         <button wire:click="handButton">
                             <a href="/home/guidance"><span class="material-symbols-rounded mainColor text-6xl sm:text-7xl">volunteer_activism</span></a>
                         </button>
-                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Looking for support of guidelines?',session()->get('locale'))}}</p>
+                        <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Or do you look for support and coping strategies ?',session()->get('locale'))}}</p>
                     </div>
                 </div>
             </div>

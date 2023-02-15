@@ -27,9 +27,9 @@
             {{-- Step 1 --}}
             <div class="static text-xs flex flex-col items-center {{$currentStep == 1 ? 'block' : 'hidden'}}">
                 
-                <div class="flex flex-col items-center justify-center sm:text-base w-60 sm:w-64 h-44 text-justify">
+                <div class="flex flex-col items-center justify-center sm:text-base w-60 sm:w-64 h-44 text-center">
                     <p class="py-2 leading-5 text-center">{{GoogleTranslate::trans('Think about your sorrundings',session()->get('locale'))}}</p>
-                    <p class="py-4 leading-5">{{GoogleTranslate::trans('The goal is to reduce access to resources or items which can be used to cause you harm',session()->get('locale'))}}</p>
+                    <p class="py-4 leading-5">{{GoogleTranslate::trans('The goal is to reduce access to resources which can be harmful',session()->get('locale'))}}</p>
                     <p class="py-2 leading-5 text-center w-60" style="color: rgba(66, 192, 183, 1);">{{GoogleTranslate::trans("Press the items you've already secured:",session()->get('locale'))}}</p>
                 </div>
                 <div class="grid grid-cols-2 grid-rows-3 gap-x-1 items-center justify-center text-xs my-6" style="color: #476F6C">
@@ -41,19 +41,18 @@
                         <a id="firearms" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Firearms',session()->get('locale'))}}</a>
                 </div>
                 <div class="flex flex-col items-center justify-center text-xs sm:text-sm md:text-base">
-                    <p class="py-1 text-center w-64">{{GoogleTranslate::trans('Move away from places that trigger somthing in you',session()->get('locale'))}}</p>
+                    <p class="py-1 text-center w-64">{{GoogleTranslate::trans('Move away from places that trigger you',session()->get('locale'))}}</p>
                 </div>
             </div>
             {{-- End of Step 1 --}}
             {{-- Step 3 --}}
             <div class="relative flex flex-col items-center {{$currentStep == 2 ? 'block' : 'hidden'}} text-start">
-                <p class="mb-10 w-60 sm:w-80">{{GoogleTranslate::trans("Don’t be afraid to ask  these questions",session()->get('locale'))}}</p>
-                <div class="grid grid-rows-4 gap-y-4 w-60 sm:w-80">
-                    <p class="leading-5">{{GoogleTranslate::trans('Is this safe?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('Can this situation be harmful?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('Can you cope with this?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('Are you thinking about self harming?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('Is it time to reach out for help?',session()->get('locale'))}}</p>
+                <p class="mb-10 w-60 sm:w-80">{{GoogleTranslate::trans("Don´t be afraid to ask yourself the following questions:",session()->get('locale'))}}</p>
+                <div class="flex flex-col gap-y-4 w-60 sm:w-80">
+                    <p class="leading-5">{{GoogleTranslate::trans('Can the situation still be harmful?',session()->get('locale'))}}</p>
+                    <p class="leading-5">{{GoogleTranslate::trans('How can you cope with these circumstances?',session()->get('locale'))}}</p>
+                    <p class="leading-5">{{GoogleTranslate::trans('Is there a risk of self-harm?',session()->get('locale'))}}</p>
+                    <p class="leading-5">{{GoogleTranslate::trans('Who can help in this situation?',session()->get('locale'))}}</p>
                 </div>
             </div>
             {{-- End of Step 2 --}}
@@ -63,7 +62,7 @@
                 <div class="w-60">
                     <ul class="list-disc list-inside">
                         <li class="py-1">{{GoogleTranslate::trans('Stay as calm as possible',session()->get('locale'))}}</li>
-                        <li class="py-1">{{GoogleTranslate::trans('Acknowlegde that your feelings are allowed',session()->get('locale'))}}</li>
+                        <li class="py-1">{{GoogleTranslate::trans('Acknowlegde that your feelings are valid',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Refrain from acting upon those feelings',session()->get('locale'))}} </li>
                         <li class="py-1">{{GoogleTranslate::trans('Avoid confrontation',session()->get('locale'))}}</li>
                         <li class="py-1">{{GoogleTranslate::trans('Instill hope',session()->get('locale'))}}</li>
@@ -73,15 +72,15 @@
             {{-- End of Step 3 --}}
             {{-- Step 4 --}}
             <div x-data="{open:false}" class="relative flex flex-col items-center justify-evenly {{$currentStep == 4 ? 'block' : 'hidden'}}">
-                <div class="grid grid-rows-3 gap-2 w-60 sm:w-80 text-center">
+                <div class="flex flex-col gap-y-3 w-60 sm:w-80 text-center my-3">
                     <div>
-                        <p>{{GoogleTranslate::trans('Please reach out for help if you can´t cope with your feelings alone.',session()->get('locale'))}} </p>
+                        <p>{{GoogleTranslate::trans('Please reach out for help if you can´t cope with your feelings alone',session()->get('locale'))}} </p>
                     </div>
                     <div>
-                        <p>{{GoogleTranslate::trans('Contact somebody in your network that you trust. Or use the professional assistance below.',session()->get('locale'))}}</p>
+                        <p>{{GoogleTranslate::trans('Contact somebody in your network that you trust or use the professional assistance below',session()->get('locale'))}}</p>
                     </div>
                     <div>
-                        <p>{{GoogleTranslate::trans('You can find directions to the nearest emergency inside Minplan App.',session()->get('locale'))}}</p>
+                        <p>{{GoogleTranslate::trans('You can find directions to the nearest emergency department in Minplan App',session()->get('locale'))}}</p>
                     </div>
                 </div>
                 <div x-on:click="open = ! open" class="hidden sm:block bg-emergency hover:cursor-pointer hover:bg-orange-400 text-slate-800 my-1 p-2 rounded-lg">
