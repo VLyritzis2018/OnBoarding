@@ -2,8 +2,8 @@
      $country = session()->get('country');
 @endphp
 <div class="relative flex flex-col items-center text-xs sm:text-base">
-    <p class="mb-5 text-center sm:w-80 w-52">{{GoogleTranslate::trans('There are different hotlines and safe spaces where you can get help',session()->get('locale'))}}</p>
-    <p class="mb-5 text-center sm:w-80 w-52">{{GoogleTranslate::trans('Some places provide anonymous services',session()->get('locale'))}}</p>
+    <p class="mb-5 text-center sm:w-80 w-52">{{GoogleTranslate::trans('There are many hotlines and safe spaces that offer support',session()->get('locale'))}}</p>
+    <p class="mb-5 text-center sm:w-80 w-52">{{GoogleTranslate::trans('Some organizations provide anonymous services',session()->get('locale'))}}</p>
     @if ($emergency_data->isEmpty())
     <p class="my-1 p-1 bg-slate-200 rounded-md text-center text-cyan-700">{{GoogleTranslate::trans('Sorry! No Emergency Contacts Available Yet.',session()->get('locale'))}}</p>
     @else

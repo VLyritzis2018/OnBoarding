@@ -12,6 +12,6 @@
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
             {{GoogleTranslate::trans('a family member',session()->get('locale'))}}</p>
         <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-            {{GoogleTranslate::trans('or, a sport coach',session()->get('locale'))}}</p>
+            {{GoogleTranslate::trans('or, a sports coach',session()->get('locale'))}}</p>
     </div>
 </div>
