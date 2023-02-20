@@ -50,7 +50,7 @@
                 <p class="mb-10 w-60 sm:w-80">{{GoogleTranslate::trans("Don´t be afraid to ask yourself the following questions:",session()->get('locale'))}}</p>
                 <div class="flex flex-col gap-y-4 w-60 sm:w-80">
                     <p class="leading-5">{{GoogleTranslate::trans('Can the situation still be harmful?',session()->get('locale'))}}</p>
-                    <p class="leading-5">{{GoogleTranslate::trans('Can you make it possible to cope with this?',session()->get('locale'))}}</p>
+                    <p class="leading-5">{{GoogleTranslate::trans('Can I cope with this alone?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Is there a risk of self-harm?',session()->get('locale'))}}</p>
                     <p class="leading-5">{{GoogleTranslate::trans('Who can help in this situation?',session()->get('locale'))}}</p>
                 </div>
@@ -122,7 +122,7 @@
                         @endif
                     </div>
                     <div class="my-1 bg-emergency p-1 rounded-lg">
-                        <a href="/home/guidance" class="text-slate-800 ">Please tell us your age for better guidance</a>
+                        <a href="{{route('Guidance')}}" class="text-slate-800 ">Please tell us your age for better guidance</a>
                     </div>
                 </div>
             </div>

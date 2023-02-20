@@ -25,15 +25,15 @@ use App\Http\Livewire\ShowFormData;
 require __DIR__ . '/auth.php';
 // Redirect main route to Home Page.
 Route::get('/', function () {
-    return redirect('/home');
+    return redirect('/tour');
 });
 // Home Route
-Route::get('/home', OnboardingIntroduction::class)->name('home');
+Route::get('/tour', OnboardingIntroduction::class)->name('home');
 // Age Route
-Route::get('/home/guidance', AgeCategory::class)->name('Guidance');
-Route::get('/home/guidance/teens', Teens::class)->name('teens');
-Route::get('/home/guidance/young-adults', YoungAdults::class)->name('youngAdults');
-Route::get('/home/guidance/adults', OldAgeAdults::class)->name('adults');
+Route::get('/tour/guidance', AgeCategory::class)->name('Guidance');
+Route::get('/tour/guidance/teens', Teens::class)->name('teens');
+Route::get('/tour/guidance/young-adults', YoungAdults::class)->name('youngAdults');
+Route::get('/tour/guidance/adults', OldAgeAdults::class)->name('adults');
 // Care Tips Route
 Route::get('/help', CareTips::class)->name('help');
 // Download App Route
