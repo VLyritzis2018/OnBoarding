@@ -105,7 +105,7 @@
                 <div class="flex px-2 gap-2 mb-2 items-center justify-center flex-col">
                     <div class="w-auto mt-2 flex justify-center flex-col items-center">
                         <button  wire:click="shieldButton">
-                            <a href="/help">
+                            <a href="{{route('help')}}">
                                 <span class="material-icons-outlined text-orange-300 text-6xl sm:text-7xl">health_and_safety</span>
                             </a>
                         </button>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="w-auto mt-2 flex justify-center flex-col items-center">
                         <button wire:click="handButton">
-                            <a href="/home/guidance"><span class="material-symbols-rounded mainColor text-6xl sm:text-7xl">volunteer_activism</span></a>
+                            <a href="{{route('Guidance')}}"><span class="material-symbols-rounded mainColor text-6xl sm:text-7xl">volunteer_activism</span></a>
                         </button>
                         <p class="my-2 text-center w-48 md:w-60 h-11">{{GoogleTranslate::trans('Or do you look for support and coping strategies ?',session()->get('locale'))}}</p>
                     </div>
