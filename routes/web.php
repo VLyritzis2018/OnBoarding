@@ -10,6 +10,7 @@ use App\Http\Livewire\MinPlanForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\OnboardingIntroduction;
 use App\Http\Livewire\ShowFormData;
+use App\Http\Livewire\SingleContact;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,9 @@ use App\Http\Livewire\ShowFormData;
 
 require __DIR__ . '/auth.php';
 // Redirect main route to Home Page.
-Route::get('/', function () {
-    return redirect('/tour');
-});
+// Route::get('/', function () {
+//     return redirect('/tour');
+// });
 // Home Route
 Route::get('/tour', OnboardingIntroduction::class)->name('home');
 // Age Route
@@ -36,6 +37,7 @@ Route::get('/tour/guidance/young-adults', YoungAdults::class)->name('youngAdults
 Route::get('/tour/guidance/adults', OldAgeAdults::class)->name('adults');
 // Care Tips Route
 Route::get('/help', CareTips::class)->name('help');
+Route::get('/help/contact/{id}', SingleContact::class)->name('singleContact');
 // Download App Route
 Route::get('/downloadApp', function () {
     return view('downloadApp');

@@ -8,7 +8,7 @@
         {{GoogleTranslate::trans(' Consider:',session()->get('locale'))}}</p>
     
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
-        {{GoogleTranslate::trans('Find a hobby',session()->get('locale'))}}</p>
+        {{GoogleTranslate::trans('Finding a hobby',session()->get('locale'))}}</p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
         {{GoogleTranslate::trans('Attending a support group meeting',session()->get('locale'))}}</p>
     <p class="leading-loose flex"><span class="px-1 material-icons-round mainColor text-sm font-bold sm:text-md sm:pt-1">check</span>
