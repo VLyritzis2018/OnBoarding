@@ -25,9 +25,9 @@ use App\Http\Livewire\SingleContact;
 
 require __DIR__ . '/auth.php';
 // Redirect main route to Home Page.
-// Route::get('/', function () {
-//     return redirect('/tour');
-// });
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 // Home Route
 Route::get('/tour', OnboardingIntroduction::class)->name('home');
 // Age Route

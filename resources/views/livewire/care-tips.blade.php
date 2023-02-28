@@ -156,7 +156,7 @@
                     <p class="my-1 text-sm md:text-lg ">{{GoogleTranslate::trans('Emergency Contacts in ', session()->get('locale'))}} <span class="text-slate-500">{{session()->get('country')}}</span> </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-4 w-11/12">
                         @foreach ($emergency_data as $data)
-                            <div class="flex flex-col w-full h-20 bg-gray-100 rounded-lg p-3">
+                            <div  wire:key="contact-{{$data->id}}" class="flex flex-col w-full h-20 bg-gray-100 rounded-lg p-3">
                                 <div class="text-gray-700 md:text-base text-sm">{{$data->name}}</div>
                                 <div class="flex justify-evenly items-center w-full text-[10px] md:text-sm">
                                     <span class="text-gray-500">{{$data->phone}}</span>
