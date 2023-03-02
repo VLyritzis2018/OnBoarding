@@ -48,6 +48,7 @@ class YoungAdults extends Component
             $buttoneType = '';
             $this->email = '';
             $language = '';
+            session()->put('adultsPageCurrentStep', 1);
         } catch (\Throwable $th) {
             $this->dispatchBrowserEvent('error', [
                 'type' => 'error',

@@ -48,6 +48,7 @@ class Teens extends Component
             $buttoneType = '';
             $this->email = '';
             $language = '';
+            session()->put('teensPageCurrentStep', 1);
         } catch (\Throwable $th) {
             $this->dispatchBrowserEvent('error', [
                 'type' => 'error',
