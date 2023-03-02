@@ -43,11 +43,13 @@ class OldAgeAdults extends Component
                 'icon' => 'success',
                 'iconColor' => 'green',
             ]);
+
             $age = '';
             $country = '';
             $buttoneType = '';
             $this->email = '';
             $language = '';
+            session()->put('OldAgePageCurrentStep', 1);
         } catch (\Throwable $th) {
             $this->dispatchBrowserEvent('error', [
                 'type' => 'error',
