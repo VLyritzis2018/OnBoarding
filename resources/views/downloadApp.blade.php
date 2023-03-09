@@ -27,7 +27,7 @@ $currentStep = session()->get('introPageCurrentStep') ?? 1;
                 </div>
                 <div class="flex justify-center items-center h-1/4 sm:flex-row flex-col">
                     
-                    <a href="https://play.google.com/store/apps/details?id=com.myplan.norway" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.minplan.minplan_app&pli=1" target="_blank">
                     <div class="bg-teal-400 rounded-lg w-48 h-14 mx-2 my-2 sm:my-0 grid grid-cols-3 transition  ease-in-out hover:translate-y-3">
                         <div class="flex justify-center p-3">
                             <i class="fab fa-google-play fa-2x"></i>
@@ -38,7 +38,7 @@ $currentStep = session()->get('introPageCurrentStep') ?? 1;
                         </div>
                     </div>
                     </a>
-                    <a href="https://apps.apple.com/dk/app/minplan-2-0-ny-version/id1550081813" target="_blank">
+                    <a href="https://apps.apple.com/us/app/minplan/id1665645155" target="_blank">
                     <div class="bg-teal-400 rounded-lg w-48 h-14 mx-2 my-2 sm:my-0 grid grid-cols-3 transition  ease-in-out hover:translate-y-3">
                         <div class="flex justify-center p-3">
                             <i class="fab fa-app-store fa-2x"></i>
