@@ -146,13 +146,13 @@
         <div class="flex flex-col absolute top-0 left-0 z-50 h-screen w-full justify-end items-center">
             {{-- Close Button --}}
             <div x-on:click="open = ! open" class="text-white text-3x absolute inset-x-0 top-0 flex justify-center items-center mt-4 z-50 hover:cursor-pointer w-full">x</div>
-            <div class="flex flex-col justify-center items-center bg-slate-50 w-4/5 h-5/6 animate__animated animate__fadeInUp rounded-t-lg">
+            <div class="flex flex-col justify-start items-center bg-slate-50 w-4/5 h-5/6 animate__animated animate__fadeInUp rounded-t-lg">
                 @if ($emergency_data->isEmpty())
                 <div class="relative flex items-center justify-center text-white text-center w-72 text-xs">
                     <p class="py-2 px-3 bg-red-500 rounded-md">{{GoogleTranslate::trans('No Emergency contacts available for the country provided.',session()->get('locale'))}}</p>
                 </div>
                 @else
-                <div class="flex w-full items-center flex-col text-center text-xs sm:text-sm  my-4 overflow-y-scroll">
+                <div class="flex w-full h-150 items-center flex-col text-center text-xs sm:text-sm  my-4 overflow-y-scroll">
                     <p class="my-1 text-sm md:text-lg ">{{GoogleTranslate::trans('Emergency Contacts in ', session()->get('locale'))}} <span class="text-slate-500">{{session()->get('country')}}</span> </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-4 w-11/12">
                         @foreach ($emergency_data as $data)
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 @endif
-                <div class="mx-3 my-1 bg-emergency p-1 rounded-md text-xs md:text-sm md:w-11/12 text-center">
+                <div class="mx-3 mb-2 bg-emergency p-1 rounded-md text-xs md:text-sm md:w-11/12 text-center">
                     <a href="{{route('Guidance')}}" class="text-slate-800">Please tell us your age for better guidance</a>
                 </div>
             </div>

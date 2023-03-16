@@ -6,6 +6,7 @@ use App\Http\Livewire\AgeCategory\OldAgeAdults;
 use App\Http\Livewire\AgeCategory\Teens;
 use App\Http\Livewire\AgeCategory\YoungAdults;
 use App\Http\Livewire\EmergencyContacts;
+use App\Http\Livewire\ManageUsers;
 use App\Http\Livewire\MinPlanForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\OnboardingIntroduction;
@@ -52,5 +53,6 @@ Route::middleware([
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/admin/formdata', ShowFormData::class)->middleware(['auth', 'verified'])->name('formData');
+    Route::get('/admin/users', ManageUsers::class)->middleware(['auth', 'verified'])->name('users');
     Route::get('/admin/emergencycontacts', EmergencyContacts::class)->middleware(['auth', 'verified'])->name('contacts');
 });
