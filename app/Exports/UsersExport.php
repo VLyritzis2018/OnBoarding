@@ -12,6 +12,6 @@ class UsersExport implements FromCollection
      */
     public function collection()
     {
-        return OnboardingData::select('age', 'country', 'language', 'buttonPresses', 'created_at')->get();
+        return OnboardingData::select('age', 'country', 'language', 'buttonPressed', 'created_at')->get();
     }
 }
