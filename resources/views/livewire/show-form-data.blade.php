@@ -25,28 +25,26 @@
     <table class="table-auto w-3/5 md:w-11/12 text-xs md:text-sm text-left text-gray-500 dark:text-gray-400 my-4 mx-2">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th scope="col" class="py-3 px-6">Country</th>
-            <th scope="col" class="py-3 px-6">Priority</th>
+            <th scope="col" class="py-3 px-6">ID</th>
             <th scope="col" class="py-3 px-6">Age</th>
-            <th scope="col" class="py-3 px-6">Gets SMS ?</th>
-            <th scope="col" class="py-3 px-6">Phone Number</th>
-            <th scope="col" class="py-3 px-6">Gets Emails ?</th>
-            <th scope="col" class="py-3 px-6">Safty Plan ?</th>
-            <th scope="col" class="py-3 px-6">Email</th>
+            <th scope="col" class="py-3 px-6">Country</th>
+            <th scope="col" class="py-3 px-6">Language</th>
+            <th scope="col" class="py-3 px-6">Button Presses</th>
             <th scope="col" class="py-3 px-6">Date</th>
+
           </tr>
         </thead>
         <tbody>
+          @php
+              $i = 1;
+          @endphp
             @foreach ($responces as $data)
                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->country}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->priority}}</td>
+                    <td class="py-4 px-6">{{$i++}}</td>
                     <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->age}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->receive_sms}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->phone_number}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->receive_email}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->needs_safty_plan}}</td>
-                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->email}}</td>
+                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->country}}</td>
+                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->language}}</td>
+                    <td class="py-4 px-6" wire:key="data-{{ $data->id }}">{{$data->buttonPressed}}</td>
                     <td class="py-4 px-6" wire:key="data-{{ $data->id }}" >{{$data->created_at->format('d/m/Y')}}</td>
                  </tr>
             @endforeach
