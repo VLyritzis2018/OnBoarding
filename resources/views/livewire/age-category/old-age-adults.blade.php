@@ -42,15 +42,20 @@
                 @include('guidance-steps.step-five')
             @endif
             {{-- End of Step --}}
-            {{-- Step 5 --}}
+            {{-- Step 5--}}
             @if ($currentStep == 5)
+                @include('guidance-steps.step-six')
+            @endif
+            {{-- End of Step --}}
+            {{-- Step 6 --}}
+            @if ($currentStep == 6)
                 @include('guidance-steps.last-step')
             @endif
             {{-- End of Step --}}
             
             </div>
             {{-- End of Steps Container --}}
-            <div class="w-56 flex justify-center items-center {{$currentStep <= 5 ? 'block' : 'hidden'}}">
+            <div class="w-56 flex justify-center items-center {{$currentStep <= 6 ? 'block' : 'hidden'}}">
                 <div class="flex justify-center items-center">
                     
                     @if ($currentStep == 1)
@@ -78,13 +83,18 @@
                     @else
                     <div class="mx-2 w-4 h-4 box-bg rounded-full mt-1"></div>
                     @endif
+                    @if ($currentStep == 6)
+                    <div class="mx-2 w-4 h-4 bg-mainColor rounded-full mt-1"></div>
+                    @else
+                    <div class="mx-2 w-4 h-4 box-bg rounded-full mt-1"></div>
+                    @endif
                 </div>
             </div>
         </div>
         {{-- Stepper --}}
         <div class="static w-1/12 mt-4 sm:mt-0 flex justify-center pr-6 sm:pr-0 sm:justify-end items-center mainColor">
             <div>
-                    <button type="button"  class="{{$currentStep < 5 ? 'block':'hidden'}}" wire:click="nextStep"><i class="fas fa-chevron-right fa-2xl mainColor"></i></button>
+                    <button type="button"  class="{{$currentStep < 6 ? 'block':'hidden'}}" wire:click="nextStep"><i class="fas fa-chevron-right fa-2xl mainColor"></i></button>
             </div>
         </div>
     </div>

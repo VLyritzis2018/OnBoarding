@@ -36,7 +36,7 @@
                         <a id="rope" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('String ropes',session()->get('locale'))}}</a>
                         <a id="alcohol" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Alcohol',session()->get('locale'))}}</a>
                         <a id="med" class="px-4 py-2 rounded-full bg-notSelected my-1">{{GoogleTranslate::trans('Medication',session()->get('locale'))}}</a>
-                        <a id="razor" class="px-4 py-2 rounded-full bg-notSelected my-1">{{GoogleTranslate::trans('Razors',session()->get('locale'))}}</a>
+                        <a id="razor" class="px-4 py-2 rounded-full bg-notSelected my-1">{{GoogleTranslate::trans('Razor',session()->get('locale'))}}</a>
                         <a id="sharp" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Sharp objects',session()->get('locale'))}}</a>
                         <a id="firearms" class="px-4 py-2 rounded-full bg-notSelected my-1 ">{{GoogleTranslate::trans('Firearms',session()->get('locale'))}}</a>
                 </div>
