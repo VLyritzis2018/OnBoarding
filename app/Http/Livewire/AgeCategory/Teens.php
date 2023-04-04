@@ -92,6 +92,7 @@ class Teens extends Component
         $this->relativeMessage = $this->defaultMessage . ' ' . $this->message;
         $this->sharedComponents = (new \Jorenvh\Share\Share)->page($this->relativeMessage, null)->twitter()->whatsapp();
         $this->facebookButton = (new \Jorenvh\Share\Share)->page('www.minplan.org', $this->relativeMessage)->facebook();
+
         return view('livewire.age-category.teens', [
             'emergency_data' => DB::table('emergencyrooms')
                 ->select('id', 'phone', 'website', 'name', 'city')
